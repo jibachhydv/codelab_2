@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,16 +25,44 @@ class MainActivity : AppCompatActivity() {
 
         // onClick Event Listener
         rollBtn.setOnClickListener {
-            Log.d("btn", "Button Clicked")
 
             val rands = (1..6).random()
 
             rollValue.text = randomNumber()
         }
 
+        var countup:Button = findViewById(R.id.countup)
+
+        countup.setOnClickListener {
+            countUp()
+        }
+
     }
 
-    fun randomNumber() : String {
+    private fun randomNumber() : String {
         return (1..6).random().toString()
+    }
+
+    private fun rollDice() {
+        Toast.makeText(this,"Button Clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun countUp() {
+
+        // get the current value of rollValue
+        var rollValue:TextView = findViewById(R.id.rollValue)
+
+//        Toast.makeText(this,rollValue.text, Toast.LENGTH_SHORT).show()
+
+
+        // change the value to int
+        val parsedInt : Int = (rollValue.text).toString().toInt()
+
+
+        if (parsedInt <= 5)
+        {
+            rollValue.text = (parsedInt + 1).toString()
+        }
+
     }
 }
