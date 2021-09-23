@@ -6,7 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/dice_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dice_1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -24,17 +35,18 @@
             android:textSize="40dp" />
 
         <LinearLayout
-            android:gravity="center_horizontal"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/rollbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Roll"
                 android:layout_marginRight="20dp"
+                android:text="Roll"
                 app:layout_constraintTop_toBottomOf="@+id/rollValue" />
 
             <Button
@@ -45,14 +57,12 @@
         </LinearLayout>
 
 
-
         <Button
+            android:id="@+id/countup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Count Up"
-            android:id="@+id/countup"
-            />
+            android:text="Count Up" />
 
     </LinearLayout>
 
