@@ -37,6 +37,13 @@ class MainActivity : AppCompatActivity() {
             countUp()
         }
 
+        // reset button
+        val reset:Button = findViewById(R.id.reset)
+
+        reset.setOnClickListener {
+            reset()
+        }
+
     }
 
     private fun randomNumber() : String {
@@ -64,5 +71,12 @@ class MainActivity : AppCompatActivity() {
             rollValue.text = (parsedInt + 1).toString()
         }
 
+    }
+
+    private fun reset() {
+        // get the current value of rollValue
+        var rollValue:TextView = findViewById(R.id.rollValue)
+
+        rollValue.text = "0"
     }
 }
